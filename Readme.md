@@ -1,5 +1,10 @@
 # Docker Getting Started
 
+## Vorab
+
+1. git clone von diesem Repo (`git clone git@github.com:tomschiffmann-teaching/03-draft-quiz-app.git`)
+2. Den `.git` Ordner löschen und somit habt ihr eine frische Projektmappe, die nicht mehr mit meinem (Toms) repo verbunden
+
 ## Docker Images bauen
 
 1. [./Dockerfile](./Dockerfile) muss vorhanden --> Dockerfile gibt an, wie das `image` gebuildet werden soll
