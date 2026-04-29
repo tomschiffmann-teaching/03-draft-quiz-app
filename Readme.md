@@ -20,7 +20,7 @@ Beispiel:
 - Allgemein: `docker run -p <Host-Port>:<Docker-Port> <docker-hub-username>/<app-name>`
 - `Host-Port`: Der Port auf eurem lokalen Betriebssystem (z.B. Windows, Mac, etc.)
 - `Docker-Port` : Der Port auf dem eure App innerhalb von Docker läuft
-- `<docker-hub-username>/<app-name>`: Der Image Name, welcher gestartet werden soll (siehe Screenshot oben als Beispiel)
+- `<docker-hub-username>/<app-name>`: Der Image Name, welcher gestartet werden soll (siehe Screenshot oben als Beispiel!)
 
 ## Docker Image auf Docker Hub deployen
 
