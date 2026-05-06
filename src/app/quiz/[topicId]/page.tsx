@@ -2,6 +2,7 @@
 
 import { use } from "react";
 import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { getTopicById } from "@/data/quizzes";
 import QuizRunner from "@/components/QuizRunner";
 import Link from "next/link";
@@ -25,9 +26,10 @@ export default function QuizPage({
       <div className="mx-auto max-w-3xl px-4 py-8">
         <Link
           href="/"
-          className="mb-6 inline-flex items-center text-sm text-gray-500 hover:text-gray-700"
+          className="mb-6 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700"
         >
-          &larr; {t.backToTopics}
+          <ArrowLeft className="h-4 w-4" />
+          {t.backToTopics}
         </Link>
         <QuizRunner topic={topic} />
       </div>

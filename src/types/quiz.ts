@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+
 export interface Question {
   id: string;
   question: string;
@@ -9,6 +11,6 @@ export interface Topic {
   id: string;
   name: string;
   description: string;
-  icon: string;
+  icon: LucideIcon;
   questions: Question[];
 }

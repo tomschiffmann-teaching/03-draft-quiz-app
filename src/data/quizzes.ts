@@ -1,3 +1,4 @@
+import { GitBranch, Workflow, Mountain, Container } from "lucide-react";
 import { Topic } from "@/types/quiz";
 
 export const topics: Topic[] = [
@@ -5,7 +6,7 @@ export const topics: Topic[] = [
     id: "git",
     name: "Git",
     description: "Version control fundamentals — commits, branches, merging, and collaboration.",
-    icon: "Git",
+    icon: GitBranch,
     questions: [
       {
         id: "git-1",
@@ -90,7 +91,7 @@ export const topics: Topic[] = [
     id: "github-actions",
     name: "GitHub Actions",
     description: "CI/CD pipelines — workflows, jobs, steps, runners, and automation.",
-    icon: "GA",
+    icon: Workflow,
     questions: [
       {
         id: "ga-1",
@@ -175,7 +176,7 @@ export const topics: Topic[] = [
     id: "terraform",
     name: "Terraform",
     description: "Infrastructure as Code — providers, resources, state, and the plan/apply cycle.",
-    icon: "TF",
+    icon: Mountain,
     questions: [
       {
         id: "tf-1",
@@ -260,7 +261,7 @@ export const topics: Topic[] = [
     id: "docker",
     name: "Docker",
     description: "Containerization — images, containers, Dockerfiles, and registries.",
-    icon: "Do",
+    icon: Container,
     questions: [
       {
         id: "docker-1",

@@ -11,14 +11,15 @@ export default function TopicCard({ topic }: { topic: Topic }) {
   const descriptionKey =
     `topic.${topic.id}.description` as TranslationKey;
   const description = (t[descriptionKey] as string) || topic.description;
+  const Icon = topic.icon;
 
   return (
     <Link
       href={`/quiz/${topic.id}`}
       className="group block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-blue-300"
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-lg font-bold text-blue-700">
-        {topic.icon}
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
+        <Icon className="h-6 w-6" />
       </div>
       <h2 className="mb-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600">
         {topic.name}
