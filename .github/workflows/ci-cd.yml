@@ -34,3 +34,22 @@ jobs:
       - name: Terraform Apply (ECR + infrastructure)
         working-directory: terraform
         run: terraform apply -auto-approve
+
+      - name: Read ECR repository name from Terraform output
+        id: tf-output
+        working-directory: terraform
+        run: echo "ecr_repository=$(terraform output -raw ecr_repository_name)" >> "$GITHUB_OUTPUT"
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, tag, and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          ECR_REPOSITORY: ${{ steps.tf-output.outputs.ecr_repository }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
